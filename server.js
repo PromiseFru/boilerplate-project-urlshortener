@@ -3,10 +3,13 @@
 var express = require('express');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
+var dotenv = require('dotenv');
+var bodyParser = require('body-parser');
 
 var cors = require('cors');
 
 var app = express();
+dotenv.config();
 
 // Basic Configuration 
 var port = process.env.PORT || 3000;
