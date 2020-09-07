@@ -10,6 +10,7 @@ var cors = require('cors');
 
 var app = express();
 dotenv.config();
+var Schema = mongoose.Schema;
 
 // Basic Configuration 
 var port = process.env.PORT || 3000;
