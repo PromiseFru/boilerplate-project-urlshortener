@@ -5,6 +5,7 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var dotenv = require('dotenv');
 var bodyParser = require('body-parser');
+var dns = require('dns');
 
 var cors = require('cors');
 
