@@ -42,8 +42,9 @@ var Url = mongoose.model("Url", urlSchema);
 // your first API endpoint... 
 app.post('/api/shorturl/new', (req, res) => {
   var postUrl = req.body.url;
+  var splitUrl = postUrl.split('//').pop()
 
-  dns.lookup(postUrl, (err) => {
+  dns.lookup(splitUrl, (err) => {
       if(err) {
           return res.json({"error":"invalid URL"})
       }
@@ -66,7 +67,7 @@ app.get('/api/shorturl/:identifier', (req, res) => {
       .then((doc) => {
           if(!doc) return res.sendStatus(404);
 
-          res.redirect('https://' + doc.url);  
+          res.redirect(doc.url);  
       })
       .catch(err => console.log(err));
 })
